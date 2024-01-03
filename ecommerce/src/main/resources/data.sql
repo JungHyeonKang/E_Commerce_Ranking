@@ -1,0 +1,1 @@
+--insert into 'store' (store_id , name, view, openingTime,closingTime) values ('1','스토어1',null,null,null);

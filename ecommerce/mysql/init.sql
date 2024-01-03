@@ -5,3 +5,4 @@ GRANT ALL PRIVILEGES ON *.* TO 'kang'@'localhost';
 GRANT ALL PRIVILEGES ON *.* TO 'kang'@'%';`
 
 CREATE DATABASE commerce DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+

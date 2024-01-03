@@ -1,8 +1,10 @@
 package com.ecommerce.domain;
 
 import jakarta.persistence.*;
+import lombok.NoArgsConstructor;
 
 @Entity
+@NoArgsConstructor
 public class Review {
 
     @GeneratedValue
@@ -14,4 +16,9 @@ public class Review {
     @ManyToOne
     @JoinColumn(name = "store_id")
     private Store store;
+
+    public Review(String content, Store store) {
+        this.content = content;
+        this.store = store;
+    }
 }

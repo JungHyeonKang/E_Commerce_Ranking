@@ -1,8 +1,10 @@
 package com.ecommerce.domain;
 
 import jakarta.persistence.*;
+import lombok.NoArgsConstructor;
 
 @Entity
+@NoArgsConstructor
 public class OrderList {
 
     @GeneratedValue
@@ -16,4 +18,9 @@ public class OrderList {
     @ManyToOne
     @JoinColumn(name = "item_id")
     private Item item;
+
+    public OrderList(User user, Item item) {
+        this.user = user;
+        this.item = item;
+    }
 }
