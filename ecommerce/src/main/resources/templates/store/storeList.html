@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>스토어 랭킹</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+
+<div class="container">
+    <h1>스토어 랭킹</h1>
+    <table border="1">
+        <tr>
+            <th>랭크</th>
+            <th>이름</th>
+            <th>조회수</th>
+            <th>영업시간(분)</th>
+            <th>평점</th>
+            <th>리뷰수</th>
+            <th>판매수</th>
+            <th>점수</th>
+        </tr>
+        <tr th:each="store, storeStat : ${data}">
+            <td th:text="${store.rank}">rank</td>
+            <td th:text="${store.name}">storeName</td>
+            <td th:text="${store.viewCount}">viewCount</td>
+            <td th:text="${store.businessTime}">businessTime</td>
+            <td th:text="${store.userRating}">userRating</td>
+            <td th:text="${store.reviewCount}">reviewCount</td>
+            <td th:text="${store.salesCount}">salesCount</td>
+            <td th:text="${store.score}">score</td>
+        </tr>
+    </table>
+
+</div>
+
+</body>
+
+<script th:inline="javascript">
+     var serverData = /*[[${data}]]*/ null;
+        console.log('Data from server:', serverData);
+</script>
+</html>

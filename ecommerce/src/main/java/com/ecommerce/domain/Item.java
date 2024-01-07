@@ -1,10 +1,15 @@
 package com.ecommerce.domain;
 
 import jakarta.persistence.*;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
+@Getter
 public class Item {
     @Id
     @GeneratedValue
@@ -16,6 +21,9 @@ public class Item {
     @ManyToOne
     private Store store;
 
+    @OneToMany(mappedBy = "item")
+    private List<OrderList> orderLists = new ArrayList<>();
+
     @Enumerated(EnumType.STRING)
     private ItemStatus itemStatus;
 
@@ -23,5 +31,8 @@ public class Item {
         this.name = name;
         this.store = store;
         this.itemStatus = itemStatus;
+    }
+    public void itemSold(){
+        this.itemStatus = ItemStatus.SOLD;
     }
 }

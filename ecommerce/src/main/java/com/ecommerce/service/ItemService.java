@@ -21,7 +21,8 @@ public class ItemService {
     public void save(ItemSaveRequest itemSaveRequest) {
         Store store = storeRepository.findById(itemSaveRequest.getStoreId()).orElseThrow();
 
-        Item item = new Item(itemSaveRequest.getName(),store, ItemStatus.NORMAL);
+        Item item = new Item(itemSaveRequest.getName(),store, ItemStatus.CREATED);
+
         itemRepository.save(item);
     }
 

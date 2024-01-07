@@ -15,7 +15,7 @@ public class UserRating {
     @ManyToOne
     private Store store;
 
-    private double rating;
+    private double rating; //평점
 
     public UserRating(Store store, double rating) {
         this.store = store;

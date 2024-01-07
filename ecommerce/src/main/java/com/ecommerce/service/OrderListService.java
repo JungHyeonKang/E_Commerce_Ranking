@@ -22,9 +22,16 @@ public class OrderListService {
 
     @Transactional
     public void order(OrderListSaveRequest orderListSaveRequest) {
+
         User user = userRepository.findById(orderListSaveRequest.getUserId()).orElseThrow();
+
         Item item = itemRepository.findById(orderListSaveRequest.getItemId()).orElseThrow();
+
+        // 판매됨으로 상품 상태변경
+        item.itemSold();
+
         OrderList orderList = new OrderList(user, item);
+
         orderListRepository.save(orderList);
     }
 }

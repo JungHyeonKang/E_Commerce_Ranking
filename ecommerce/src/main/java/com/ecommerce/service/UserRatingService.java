@@ -19,7 +19,9 @@ public class UserRatingService {
     @Transactional
     public void save(UserRatingSaveRequest userRatingSaveRequest) {
         Store store = storeRepository.findById(userRatingSaveRequest.getStoreId()).orElseThrow();
+
         UserRating userRating = new UserRating(store, userRatingSaveRequest.getRating());
+
         userRatingRepository.save(userRating);
     }
 }

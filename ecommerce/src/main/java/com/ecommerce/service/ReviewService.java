@@ -19,8 +19,11 @@ public class ReviewService {
 
     @Transactional
     public void save(Long storeId,ReviewSaveRequest reviewSaveRequest) {
+
         Store store = storeRepository.findById(storeId).orElseThrow();
+
         Review review = new Review(reviewSaveRequest.getContent(), store);
+
         reviewRepository.save(review);
     }
 }

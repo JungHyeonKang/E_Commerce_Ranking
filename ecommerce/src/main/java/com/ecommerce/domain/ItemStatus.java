@@ -1,5 +1,5 @@
 package com.ecommerce.domain;
 
 public enum ItemStatus {
-    NORMAL
+    CREATED,SOLD,DELETED
 }

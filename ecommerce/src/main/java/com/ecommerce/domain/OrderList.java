@@ -5,7 +5,7 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @NoArgsConstructor
-public class OrderList {
+public class OrderList {//구매목록
 
     @GeneratedValue
     @Id
