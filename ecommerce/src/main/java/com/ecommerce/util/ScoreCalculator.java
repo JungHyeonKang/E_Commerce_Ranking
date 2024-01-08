@@ -1,12 +1,11 @@
-package com.ecommerce.service;
+package com.ecommerce.util;
 
-import com.ecommerce.dto.StoreInfo;
+import com.ecommerce.vo.StoreInfo;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Service;
 
-@Service
+
 @Slf4j
-public class ScoreService {
+public class ScoreCalculator {
     // 가중치
     private static final double WEIGHT_VIEWS = 0.3; // 조회수
     private static final double WEIGHT_SALES = 0.3; // 판매수
@@ -38,7 +37,7 @@ public class ScoreService {
 
 
     //스코어 생성
-    public double getScore(StoreInfo store){
+    public static double getScore(StoreInfo store){
 
         double normalizedViews = normalize(store.getViewCount(), minViews, maxViews);
         double normalizedSales = normalize(store.getSalesCount(), minSales, maxSales);

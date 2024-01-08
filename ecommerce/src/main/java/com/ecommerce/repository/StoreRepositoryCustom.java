@@ -1,6 +1,6 @@
 package com.ecommerce.repository;
 
-import com.ecommerce.dto.StoreInfo;
+import com.ecommerce.vo.StoreInfo;
 
 import java.util.List;
 

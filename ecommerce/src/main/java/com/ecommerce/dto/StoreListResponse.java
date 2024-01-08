@@ -1,9 +1,12 @@
 package com.ecommerce.dto;
 
+import com.ecommerce.vo.StoreInfo;
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Data
-public class StoreListResponse {
+public class StoreListResponse implements Serializable {
 
     private int rank; //랭크
     private double score; // 점수

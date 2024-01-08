@@ -1,7 +1,7 @@
 package com.ecommerce.repository;
 
 import com.ecommerce.domain.*;
-import com.ecommerce.dto.StoreInfo;
+import com.ecommerce.vo.StoreInfo;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import jakarta.persistence.EntityManager;
 import lombok.extern.slf4j.Slf4j;
